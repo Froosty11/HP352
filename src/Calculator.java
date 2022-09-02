@@ -17,7 +17,7 @@ public class Calculator {
     public void step() {
         Item nxt = expr[ipointer++];
         switch (nxt.getType()) {
-            case VALUE:{
+            case VALUE: {
                 stack.push(nxt.getValue());
                 break;
             }
@@ -45,6 +45,19 @@ public class Calculator {
                 stack.push(x / y);
                 break;
             }
+            case MOD: {
+                int y = stack.pop();
+                int x = stack.pop();
+                stack.push(x % y);
+                break;
+            }
+            case WML: {
+                int y = stack.pop();
+                int x = stack.pop();
+                stack.push(x * y % 10 + x * y / 10);
+                break;
+            }
         }
     }
 }
+

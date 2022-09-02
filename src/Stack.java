@@ -13,7 +13,17 @@ public class Stack {
         return 0;
     }
     public boolean push(int i){
-        if(pointer < list.length) {
+        if(pointer <= list.length) {
+           if(pointer == list.length-1){
+                int[] newList = new int[list.length*2];
+                int j = 0;
+                for (int nmr :
+                        list) {
+                    newList[j] = nmr;
+                    j++;
+                }
+                this.list = newList;
+            }
             this.list[++pointer] = i;
             return true;
         }

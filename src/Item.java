@@ -4,7 +4,11 @@ public class Item {
         SUB, // subtraction key
         MUL, // multiplication key
         DIV, // division key
-        VALUE //a value
+        WML,
+
+        MOD,
+        VALUE, //a value
+
     }
     public Item (ItemType type, int value){
         this.type = type;
